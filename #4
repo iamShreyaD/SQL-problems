@@ -1,0 +1,11 @@
+Find products never ordered.
+Tables: orders, products
+
+SELECT p.product_id, p.product_name
+FROM products p 
+LEFT JOIN orders o ON p.product_id = o.product_id
+WHERE o.product_id IS NULL;
+
+I used LEFT JOIN to retrieve all records from products table and matching records from orders table.
+If no matching values in orders table, then columns are returned as NULL.
+Then, filtering WHERE o.product_id IS NULL for the products never ordered as the records of those products never existed in orders table.
