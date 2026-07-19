@@ -1,0 +1,14 @@
+Three tables join for order details.
+Tables: customers, orders, products
+Get customer_name, product_name, amount
+
+SELECT c.customer_name, p.product_name, o.amount
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id
+INNER JOIN products p ON o.product_id = p.product_id;
+
+I used INNER JOIN because I only wanted records 
+where there is a valid relationship between customers, orders, and products. 
+First, I joined customers with orders using customer_id, 
+then I joined orders with products using product_id. 
+This returns only orders that have both a valid customer and a valid product.
