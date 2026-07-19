@@ -1,0 +1,6 @@
+Find all customer and their orders.
+tables: customers(customer_id, name), orders(order_id, customer_id, amount)
+
+SELECT *
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id;
