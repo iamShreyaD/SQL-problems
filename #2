@@ -1,0 +1,11 @@
+Find customers who never placed an order.
+
+SELECT *
+FROM customers c
+LEFT JOIN orders o ON c.customer_id = o.customer_id 
+WHERE o.order_id IS NULL;
+
+I used a LEFT JOIN to keep all records from the customers table 
+while looking for matching customer_id values in the orders table. 
+If no matching order exists, the order columns are returned as NULL. 
+Filtering for order_id IS NULL gives customers who have never placed an order.
