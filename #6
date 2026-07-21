@@ -1,0 +1,9 @@
+SELF JION to find employee-manager pairs.
+
+Table: employees (employee_id, name, manager_id)
+
+SELECT e1.employee_id AS employee, e2.manager_id AS manager
+FROM employees e1
+LEFT JOIN employees e2 ON e1.manager_id = e2.employee_id;
+
+matching employee's manager id in e1 (employee table) with manager's employee id in e2 (manager table).
