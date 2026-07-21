@@ -1,0 +1,9 @@
+Find the total revenue per customer category.
+
+Tables: customers (customer_id, name, customer_name, first_name, last_name, email, phone_no, country, city, birth_data, category)
+orders (order_id, customer_id, product_id, amount, quantity, order_date, delivary_date, signup_date, status, region)
+
+SELECT c.category, SUM(o.amount) AS total_revenue
+FROM customers c
+INNER JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.category;
